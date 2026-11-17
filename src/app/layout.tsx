@@ -9,7 +9,8 @@ export const metadata: Metadata = {
   title: "Campfire",
   description: "Keep the fire going with the guys you care about.",
   appleWebApp: { capable: true, title: "Campfire", statusBarStyle: "black-translucent" },
-  icons: { apple: "/icons/180" },
+  manifest: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/manifest.webmanifest`,
+  icons: { icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icon.svg`, apple: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/icons/180.png` },
 };
 
 export const viewport: Viewport = {

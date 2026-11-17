@@ -13,6 +13,12 @@ npm run build      # production build
 
 Node isn't on the default PATH on this Mac. Run `export PATH=/opt/homebrew/bin:$PATH` first.
 
+## Deploy (GitHub Pages)
+
+The app builds as a fully static site (`output: "export"`, written to `out/`). Every push to `main` runs `.github/workflows/pages.yml`, which tests, builds with `BASE_PATH=/<repo-name>` and publishes to `https://<user>.github.io/<repo-name>/`.
+
+To try the Pages build locally: `BASE_PATH=/campfire npm run build`, then serve the parent of a `campfire/` folder containing `out/`.
+
 ## What's in v1
 
 - **Circles:** Inner Circle, The Crew, Outer Ring. Each has its own target cadence and decay speed.
@@ -35,7 +41,7 @@ Node isn't on the default PATH on this Mac. Run `export PATH=/opt/homebrew/bin:$
 - **Log a hang:** pick one friend or several for a group hang. Choose type, length and date (or backdate it), and add a note. A live preview shows the heat gain.
 - **Add and edit friends**, including an optional birthday. Deleting needs a confirm and can be undone.
 - **Settings:** download or restore a JSON backup, load a sample camp, erase everything.
-- **PWA:** web manifest and app icons, so you can "Add to Home Screen" on your phone.
+- **PWA:** static web manifest (`public/manifest.webmanifest`) and app icons (`public/icons/`), so you can "Add to Home Screen" on your phone.
 
 ## Storage
 
